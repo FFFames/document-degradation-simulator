@@ -1,30 +1,3 @@
-# Document Degradation Simulator
-
-This Python tool provides a pipeline for simulating realistic degradation and aging effects on digital documents. It is designed to transform pristine PDF or image-based documents into versions that appear scanned, photocopied, or physically aged.
-
-## Pipeline Overview
-
-The simulator operates through a multi-stage image processing pipeline:
-
-1.  **Noise Injection:** Adds Gaussian and "Salt and Pepper" noise to simulate sensor grain and dust.
-2.  **Blurring:** Applies subtle Gaussian blur to mimic lens defocus or scanner motion.
-3.  **Contrast & Brightness Adjustment:** Simulates the loss of dynamic range common in photocopies.
-4.  **Rotation & Shear:** Introduces slight misalignments (deskewing) typical of manual scanning.
-5.  **Thresholding:** (Optional) Mimics the binary look of older fax or xerox machines.
-
-## Prerequisites
-
-Ensure you have the necessary libraries installed:
-
-```bash
-pip install opencv-python numpy
-```
-
-## The Simulator Script
-
-Save the following code as `degrade_document.py`.
-
-```python
 import cv2
 import numpy as np
 import random
@@ -86,18 +59,3 @@ if __name__ == "__main__":
     # Example usage
     # simulate_scan("input.png", "degraded_output.png")
     pass
-```
-
-## Usage Instructions
-
-1.  **Prepare your environment:** Ensure Python and the required libraries are installed.
-2.  **Input Image:** Place the image you wish to degrade in your working directory.
-3.  **Run the script:** Update the `simulate_scan` call in the `__main__` block with your filenames and execute:
-    ```bash
-    python degrade_document.py
-    ```
-
-This pipeline can be further customized by adjusting parameters such as `sigma` for noise intensity or the `angle` for rotation to achieve the specific level of degradation required for your project.
-
----
-*Created for Shalom (Fame)*
